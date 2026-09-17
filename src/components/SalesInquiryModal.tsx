@@ -32,11 +32,33 @@ export default function SalesInquiryModal({
     notes: "",
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "sales_inquiry",
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          yachtName: formData.preferredYacht,
+          charterDates: formData.preferredDate,
+          notes: `Buyer: ${formData.buyerType} | Type: ${formData.inquiryType} | Location: ${formData.preferredLocation} | Survey: ${formData.surveyRequirements} | Notes: ${formData.notes}`,
+        }),
+      });
+    } catch (err) {
+      console.warn("Sales inquiry submission error:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   const handleReset = () => {
@@ -281,10 +303,11 @@ export default function SalesInquiryModal({
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-7 py-3 rounded-full aegean-btn text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-sky-900/20 hover:opacity-95 transition-all cursor-pointer"
+                  disabled={submitting}
+                  className="w-full sm:w-auto px-7 py-3 rounded-full aegean-btn text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-sky-900/20 hover:opacity-95 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  Submit S&P Request
+                  {submitting ? "Submitting Request..." : "Submit S&P Request"}
                 </button>
               </div>
             </form>

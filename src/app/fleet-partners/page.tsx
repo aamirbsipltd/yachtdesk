@@ -61,6 +61,7 @@ export default function FleetPartnersPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [submissionRef, setSubmissionRef] = useState("");
 
   // Interactive VAT / Commission Simulator State
@@ -99,14 +100,41 @@ export default function FleetPartnersPage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const randomRef = "ATH-CA-" + Math.floor(1000 + Math.random() * 9000);
-    setSubmissionRef(randomRef);
-    setSubmitted(true);
-    const target = document.getElementById("intake-form");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "fleet_partner",
+          company: formData.fleetName,
+          name: formData.contactName,
+          email: formData.email,
+          phone: formData.phone,
+          plan: formData.plan,
+          fleetSize: formData.fleetSize,
+          fleetBase: formData.fleetBase,
+          listingLink: formData.listingLink,
+          notes: formData.notes,
+        }),
+      });
+      const data = await res.json();
+      const ref = data.leadId || ("ATH-CA-" + Math.floor(1000 + Math.random() * 9000));
+      setSubmissionRef(ref);
+      setSubmitted(true);
+    } catch (err) {
+      console.warn("Intake submission error:", err);
+      const fallbackRef = "ATH-CA-" + Math.floor(1000 + Math.random() * 9000);
+      setSubmissionRef(fallbackRef);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+      const target = document.getElementById("intake-form");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -1558,10 +1586,11 @@ export default function FleetPartnersPage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl aegean-btn font-extrabold text-xs uppercase tracking-wider hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 cursor-pointer"
+                    disabled={submitting}
+                    className="w-full py-4 rounded-xl aegean-btn font-extrabold text-xs uppercase tracking-wider hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 cursor-pointer disabled:opacity-50"
                   >
                     <Send className="w-4 h-4 stroke-[2.5]" />
-                    Submit Fleet For Autonomous Provisioning (No Call Needed)
+                    {submitting ? "Provisioning In Progress..." : "Submit Fleet For Autonomous Provisioning (No Call Needed)"}
                   </button>
                   <p className="text-center text-[11px] text-slate-400 mt-2">
                     By submitting, your commercial fleet enters our 4-hour Hellenic e-Mitroo validation queue. No sales rep will call you.

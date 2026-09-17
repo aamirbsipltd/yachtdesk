@@ -29,11 +29,35 @@ export default function InquiryModal({
     specialNotes: "",
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "charter_inquiry",
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          yachtName: formData.preferredYacht || defaultYachtName || "Greek Fleet Charter",
+          charterDates: formData.dates,
+          guests: formData.guestCount,
+          budget: formData.budgetRange,
+          notes: `Destination: ${formData.destination} | Notes: ${formData.specialNotes}`,
+        }),
+      });
+    } catch (err) {
+      console.warn("Charter inquiry submission error:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -219,10 +243,11 @@ export default function InquiryModal({
               <div className="pt-3">
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl aegean-btn font-black text-xs uppercase tracking-wider hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 cursor-pointer"
+                  disabled={submitting}
+                  className="w-full py-3.5 px-6 rounded-xl aegean-btn font-black text-xs uppercase tracking-wider hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 cursor-pointer disabled:opacity-50"
                 >
                   <Send className="w-4 h-4 stroke-[2.5]" />
-                  Dispatch Inquiry to Central Agency Desk
+                  {submitting ? "Dispatching Inquiry..." : "Dispatch Inquiry to Central Agency Desk"}
                 </button>
               </div>
 

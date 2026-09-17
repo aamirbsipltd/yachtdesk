@@ -57,9 +57,32 @@ export default function SellYourYachtPage() {
     notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "sell_yacht",
+          name: formData.ownerName,
+          email: formData.email,
+          phone: formData.phone,
+          company: `${formData.ownerRole} (${formData.listingType})`,
+          yachtName: `${formData.builder} ${formData.model} (${formData.yearBuilt})`,
+          budget: `Asking: €${formData.askingPriceEur} | VAT: ${formData.vatStatus}`,
+          notes: `LOA: ${formData.lengthM}m | GT: ${formData.grossTonnage} | Flag: ${formData.flagState} | Location: ${formData.currentLocation} | Class: ${formData.classSociety} | Dual-Track Charter: ${formData.enrollInCharterFleet ? "Yes" : "No"} | Notes: ${formData.notes}`,
+        }),
+      });
+    } catch (err) {
+      console.warn("Sell yacht submission error:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -536,10 +559,11 @@ export default function SellYourYachtPage() {
 
                     <button
                       type="submit"
-                      className="w-full sm:w-auto px-8 py-3.5 rounded-full aegean-btn text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 hover:opacity-95 transition-all cursor-pointer"
+                      disabled={submitting}
+                      className="w-full sm:w-auto px-8 py-3.5 rounded-full aegean-btn text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-sky-900/20 hover:opacity-95 transition-all cursor-pointer disabled:opacity-50"
                     >
                       <Send className="w-3.5 h-3.5" />
-                      Submit For Valuation & Listing
+                      {submitting ? "Submitting Valuation..." : "Submit For Valuation & Listing"}
                     </button>
                   </div>
                 </form>
