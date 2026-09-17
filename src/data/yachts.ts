@@ -53,9 +53,9 @@ export const YACHTS_DATA: Yacht[] = [
     vatRatePercent: 12,
     apaRatePercent: 35,
     featured: true,
-    heroImage: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/images/aegean-odyssey.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1600&q=80",
+      "/images/aegean-odyssey.jpg",
       "https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1600&q=80",
       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80"
     ],
@@ -125,9 +125,9 @@ export const YACHTS_DATA: Yacht[] = [
     vatRatePercent: 12,
     apaRatePercent: 25,
     featured: true,
-    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/images/olympic-breeze.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+      "/images/olympic-breeze.jpg"
     ],
     description: "Ultra-luxury eco-responsible catamaran with 340 sqm of living space. Integrated solar skin, electric hydro-generators for silent emissions-free anchoring in crystal Ionian coves.",
     amenities: ["Silent Electric Night Mode", "Massive Flybridge Jacuzzi", "Bow Terrace Lounge", "Eco Watermaker 300L/h", "Starlink Connectivity"],
@@ -159,9 +159,9 @@ export const YACHTS_DATA: Yacht[] = [
     vatRatePercent: 12,
     apaRatePercent: 35,
     featured: true,
-    heroImage: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/images/poseidon-royal.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80"
+      "/images/poseidon-royal.jpg"
     ],
     description: "Flagship Benetti displacement superyacht. Certified touch-and-go commercial helipad, glass-bottom pool cascading into beach club, gym, hammam steam room, and onboard cinema.",
     amenities: ["Touch-and-Go Helipad", "Glass-Bottom Pool & Jacuzzi", "Full Spa & Steam Room", "Fully Equipped Technogym", "Private Owner's Deck with Terrace", "Elevator to All 4 Decks"],
