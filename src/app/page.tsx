@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050811] text-slate-100 selection:bg-amber-400 selection:text-slate-950 relative">
+    <main className="min-h-screen bg-[#F8FAFC] text-[#0B1E36] selection:bg-sky-200 selection:text-sky-950 relative">
       {/* Top navigation */}
       <Navbar onOpenInquiry={handleOpenInquiry} />
 
