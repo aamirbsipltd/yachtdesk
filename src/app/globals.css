@@ -1,51 +1,74 @@
 @import "tailwindcss";
 
 @theme {
-  --color-midnight: #050811;
-  --color-midnight-card: #0A0F1F;
-  --color-midnight-border: #1E293B;
-  --color-gold-300: #F3E5AB;
-  --color-gold-400: #E5C158;
-  --color-gold-500: #D4AF37;
-  --color-gold-600: #AA820A;
-  --color-aegean: #0284C7;
-  --color-aegean-deep: #0369A1;
+  --color-aegean-950: #071526;
+  --color-aegean-900: #0B1E36;
+  --color-aegean-800: #0F2D52;
+  --color-aegean-700: #143E70;
+  --color-aegean-600: #02509A;
+  --color-aegean-500: #0284C7;
+  --color-aegean-400: #38BDF8;
+  --color-aegean-100: #E0F2FE;
+  --color-aegean-50: #F0F9FF;
+
+  --color-grecian-gold: #C59B27;
+  --color-grecian-gold-light: #E5C365;
+  --color-grecian-gold-dark: #9A7514;
+
+  --color-cycladic-white: #FFFFFF;
+  --color-cycladic-sand: #FBFBFA;
+  --color-cycladic-slate: #F1F5F9;
 }
 
 :root {
-  --background: #050811;
-  --foreground: #F8FAFC;
+  --background: #F8FAFC;
+  --foreground: #0B1E36;
 }
 
 body {
-  background-color: #050811;
-  color: #F8FAFC;
+  background-color: #F8FAFC;
+  color: #0B1E36;
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Smooth luxury glassmorphism */
-.glass-panel {
-  background: rgba(10, 15, 31, 0.75);
+/* Crisp Cycladic Glassmorphism */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(2, 80, 154, 0.06);
 }
 
-.glass-panel-gold {
-  background: rgba(10, 15, 31, 0.85);
+.glass-panel-aegean {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.92) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  box-shadow: 0 15px 35px -5px rgba(2, 80, 154, 0.1);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 50%, #AA820A 100%);
+.aegean-gradient-text {
+  background: linear-gradient(135deg, #02509A 0%, #0284C7 50%, #0369A1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #AA820A 100%);
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B48C36 0%, #D4AF37 50%, #9A7514 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aegean-btn {
+  background: linear-gradient(135deg, #02509A 0%, #0284C7 100%);
+  color: #FFFFFF;
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%);
+  color: #071526;
 }
 
 /* Custom scrollbar */
@@ -53,12 +76,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #050811;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #0284C7;
 }
