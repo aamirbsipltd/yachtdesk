@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yatchdesk.com"),
   title: "YachtDesk | Mediterranean & Greek Islands Luxury Yacht Charters",
   description: "Direct-to-fleet crewed yacht charter sourcing across Athens, the Cyclades, Ionian, and the Mediterranean. Transparent Greek Law 4926/2022 VAT & APA calculations with zero retail markups.",
   keywords: [
