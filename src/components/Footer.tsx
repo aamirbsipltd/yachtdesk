@@ -87,6 +87,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-medium text-slate-300">
               <li>
+                <Link href="/fleet-partners" className="hover:text-white transition-colors flex items-center gap-1.5 font-bold text-[#38BDF8]">
+                  Fleet Partners (Central Agents)
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">€0 / mo</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/operations" className="hover:text-white transition-colors flex items-center gap-1.5 font-bold text-sky-300">
                   Operations Console
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -157,6 +163,10 @@ export default function Footer() {
               © {new Date().getFullYear()} YachtDesk International Ltd. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-4 font-medium">
+              <Link href="/fleet-partners" className="hover:text-white transition-colors text-sky-300 font-bold">
+                Fleet Partner Onboarding (€0)
+              </Link>
+              <span>•</span>
               <Link href="/sales" className="hover:text-white transition-colors">
                 Yachts For Sale
               </Link>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Anchor, ShieldCheck, Compass, Menu, X, ChevronRight, Briefcase, Tag, Ship } from "lucide-react";
+import { Anchor, ShieldCheck, Compass, Menu, X, ChevronRight, Briefcase, Tag, Ship, Building2, Zap } from "lucide-react";
 
 interface NavbarProps {
   onOpenInquiry: (yachtName?: string) => void;
@@ -26,6 +26,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
   const isSales = pathname.startsWith("/sales");
   const isSell = pathname === "/sell";
   const isOps = pathname === "/operations";
+  const isFleetPartners = pathname === "/fleet-partners";
 
   return (
     <header
@@ -99,6 +100,19 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
         {/* Right CTA */}
         <div className="hidden lg:flex items-center gap-3">
+          <Link
+            href="/fleet-partners"
+            className={`px-3.5 py-2 rounded-full text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 transition-all shadow-sm ${
+              isFleetPartners
+                ? "bg-[#02509A] text-white shadow-md shadow-sky-900/20"
+                : "bg-sky-50 text-[#02509A] border border-sky-300 hover:bg-sky-100 hover:border-sky-400"
+            }`}
+          >
+            <Building2 className="w-3.5 h-3.5 text-[#0284C7]" />
+            <span>For Fleet Managers</span>
+            <span className="text-[10px] bg-emerald-500 text-white font-mono px-1.5 py-0.5 rounded-full uppercase tracking-tighter font-bold">€0</span>
+          </Link>
+
           <div className="flex items-center gap-1.5 text-xs font-semibold text-sky-900 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-full shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Greek Law 4926 Certified</span>
@@ -115,6 +129,13 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
         {/* Mobile menu button */}
         <div className="lg:hidden flex items-center gap-2">
+          <Link
+            href="/fleet-partners"
+            className="px-2.5 py-1.5 rounded-full bg-sky-50 border border-sky-300 text-[#02509A] font-bold text-[11px] uppercase tracking-wider flex items-center gap-1"
+          >
+            <Building2 className="w-3 h-3 text-[#0284C7]" />
+            Fleet
+          </Link>
           <button
             onClick={() => onOpenInquiry()}
             className="px-3 py-1.5 rounded-full aegean-btn text-white font-bold text-xs uppercase cursor-pointer"
@@ -134,6 +155,21 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
       {/* Mobile Menu dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-6 mt-3 space-y-4 shadow-xl">
+          <Link
+            href="/fleet-partners"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`flex items-center justify-between p-3 rounded-2xl border text-sm font-bold transition-all ${
+              isFleetPartners
+                ? "bg-[#02509A] text-white border-[#02509A]"
+                : "bg-sky-50 text-[#02509A] border-sky-200"
+            }`}
+          >
+            <span className="flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-[#0284C7]" />
+              For Fleet Managers (Central Agents)
+            </span>
+            <span className="text-[10px] bg-emerald-600 text-white font-mono px-2 py-0.5 rounded-full uppercase font-bold">€0 / mo</span>
+          </Link>
           <Link
             href="/#fleet"
             onClick={() => setMobileMenuOpen(false)}
