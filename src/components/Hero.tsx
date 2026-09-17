@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, Compass, Users, SlidersHorizontal, CheckCircle2, Sparkles, Anchor } from "lucide-react";
+import { Search, Compass, Users, SlidersHorizontal, CheckCircle2, Anchor, ShieldCheck } from "lucide-react";
 
 interface HeroProps {
   onSearch: (filters: {
@@ -33,49 +33,63 @@ export default function Hero({ onSearch, onOpenInquiry }: HeroProps) {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-[#EDF6FF] via-[#F8FAFC] to-[#F1F5F9]">
-      {/* Aegean ambient sea glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-sky-300/25 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-amber-200/20 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative w-full overflow-hidden">
+      {/* End-to-End Full-Bleed Hero Banner */}
+      <div className="relative w-full min-h-[620px] md:min-h-[720px] flex items-center justify-center pt-28 pb-36 px-4 sm:px-6 lg:px-8">
+        {/* Full-width Background Image with Mediterranean Overlays */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/aegean-odyssey.jpg"
+            alt="Mediterranean Luxury Superyacht in the Cyclades"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Gradients: Top darkness for navbar, Mediterranean blue tint, and bottom fade to white canvas */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1E36]/80 via-[#0B1E36]/40 to-[#0B1E36]/90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC] via-transparent to-transparent h-28 bottom-0" />
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto space-y-6">
-          {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-sky-200 text-[#02509A] text-xs font-bold tracking-wider uppercase shadow-sm">
-            <Anchor className="w-3.5 h-3.5 text-[#0284C7]" />
+        {/* Content Container */}
+        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-wider uppercase shadow-lg">
+            <Anchor className="w-3.5 h-3.5 text-amber-300" />
             <span>The Mediterranean Algorithmic Charter Desk</span>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0B1E36] leading-[1.1]">
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white drop-shadow-md leading-[1.1]">
             Direct-to-Fleet <br className="hidden sm:block" />
-            <span className="aegean-gradient-text">Mediterranean Charters</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-white to-amber-200">
+              Mediterranean Charters
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Eliminating opaque retail broker layers. Sourcing verified Central Agency yachts across Athens, Mykonos, the Cyclades, Ionian, and the French Riviera with transparent Greek Law 4926 VAT & APA calculations.
+          <p className="text-base sm:text-lg text-slate-100 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            Connecting private charterers directly to certified Central Agency fleets across Athens, Mykonos, Corfu & Monaco. 100% transparent Greek Law 4926/2022 VAT & APA calculations with zero retail broker markups.
           </p>
 
-          {/* Quick value badges */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-600 font-medium">
+          {/* Key Trust Pillars */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-200 font-semibold drop-shadow-sm">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Standard MYBA Contract Terms
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              Standard MYBA Worldwide Agreement
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#02509A]" />
-              Transparent 12% Greek Law 4926 VAT
+              <CheckCircle2 className="w-4 h-4 text-sky-300" />
+              Transparent 12% Greek Maritime VAT
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#0284C7]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-300" />
               Verified e-Mitroo Commercial Vessels
             </span>
           </div>
         </div>
+      </div>
 
-        {/* Global Search & Filtration Engine */}
-        <div className="mt-12 max-w-5xl mx-auto glass-panel-light rounded-3xl p-5 sm:p-7 shadow-2xl shadow-sky-900/10 border border-sky-100 relative">
+      {/* Floating Interactive Search Deck (Overlapping Banner & Fleet Section) */}
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 mb-16">
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-7 shadow-2xl shadow-sky-950/15 border border-slate-200">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Region selector */}
             <div className="space-y-1.5 text-left">
@@ -86,7 +100,7 @@ export default function Hero({ onSearch, onOpenInquiry }: HeroProps) {
               <select
                 value={selectedRegion}
                 onChange={(e) => setSelectedRegion(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
               >
                 <option value="all">All Mediterranean Destinations</option>
                 <option value="Cyclades">Cyclades (Mykonos, Santorini, Paros)</option>
@@ -106,7 +120,7 @@ export default function Hero({ onSearch, onOpenInquiry }: HeroProps) {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
               >
                 <option value="all">All Vessel Classes</option>
                 <option value="motor">Motor Superyachts (30m–45m)</option>
@@ -125,7 +139,7 @@ export default function Hero({ onSearch, onOpenInquiry }: HeroProps) {
               <select
                 value={guestCount}
                 onChange={(e) => setGuestCount(Number(e.target.value))}
-                className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0284C7] shadow-sm cursor-pointer"
               >
                 <option value={4}>Up to 4 Guests (2 Cabins)</option>
                 <option value={6}>Up to 6 Guests (3 Cabins)</option>
