@@ -409,11 +409,11 @@ export default function FleetPartnersPage() {
               <span>Transparent Market Benchmark</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-[#0B1E36] tracking-tight">
-              Why Greek Central Agents Are Switching <br className="hidden sm:block" />
-              <span className="aegean-gradient-text">To YachtDesk</span>
+              Where YachtDesk Fits In Your Tech Stack <br className="hidden sm:block" />
+              <span className="aegean-gradient-text">Complementing Your Existing Accreditations</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Compare YachtDesk with legacy directory databases, bareboat charter portals, and expensive in-house administrative staffing.
+              An objective breakdown of what industry platforms and payroll provide — and how YachtDesk delivers the automated client execution layer at €0 setup.
             </p>
           </div>
 
@@ -422,102 +422,138 @@ export default function FleetPartnersPage() {
             {/* Card 1: Yachtfolio */}
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
-                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Legacy Database</div>
+                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Accreditation Database</div>
                 <h3 className="text-lg font-black text-[#0B1E36]">YACHTFOLIO (MYBA)</h3>
                 <div className="p-3 rounded-xl bg-white border border-slate-200 text-xs space-y-1">
-                  <div className="text-red-600 font-bold">€2,500 Upfront Admin Fee</div>
+                  <div className="text-slate-800 font-bold">€2,500 Admin / Vetting Fee</div>
                   <div className="text-slate-600 font-semibold">+ €1,500 – €4,500 / Year</div>
-                  <div className="text-[11px] text-slate-400">Non-refundable application cost</div>
+                  <div className="text-[11px] text-slate-500">Industry-standard B2B MLS credential</div>
                 </div>
-                <ul className="space-y-2.5 text-xs text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Rigid vetting process (can take months to approve)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>2005-era manual, slow web interface</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>No automated 30s luxury client proposal generation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>No Greek Law 4926 automated VAT calculator</span>
-                  </li>
-                </ul>
+                <div>
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">What the fee provides:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>MYBA compliance audit & credentialing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Professional indemnity & escrow verification</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Access to 1,500+ vetted global retail brokers</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-2 border-t border-slate-200">
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Operational limits:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-500">
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>Static B2B MLS; no client proposal generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>No Greek Law 4926 dynamic VAT/APA calculator</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] text-slate-500 font-medium">
-                Best for: Static historical broker listing lookup only.
+              <div className="pt-4 border-t border-slate-200 text-[11px] text-[#02509A] font-semibold bg-sky-50/50 p-2.5 rounded-xl">
+                YachtDesk Synergy: We sync directly with your Yachtfolio fleet so you keep your accreditation while automating proposals.
               </div>
             </div>
 
             {/* Card 2: Booking Manager (MMK) */}
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
-                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Bareboat Software</div>
+                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Bareboat Network</div>
                 <h3 className="text-lg font-black text-[#0B1E36]">Booking Manager (MMK)</h3>
                 <div className="p-3 rounded-xl bg-white border border-slate-200 text-xs space-y-1">
-                  <div className="text-red-600 font-bold">€800 – €1,500 Setup Fee</div>
+                  <div className="text-slate-800 font-bold">€800 – €1,500 Setup Fee</div>
                   <div className="text-slate-600 font-semibold">+ €1,800 – €4,800 / Year</div>
-                  <div className="text-[11px] text-slate-400">Annual recurring SaaS lock-in</div>
+                  <div className="text-[11px] text-slate-500">Agency distribution & onboarding</div>
                 </div>
-                <ul className="space-y-2.5 text-xs text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Engineered primarily for bareboat catamarans and monohulls</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Lacks luxury superyacht presentation aesthetics</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>No Sale & Purchase (S&P) family office integration</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>No automated MYBA WYA contract engine</span>
-                  </li>
-                </ul>
+                <div>
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">What the fee provides:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Technical fleet onboarding & specification import</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Syndication to 3,000+ European travel agencies</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Base management & port crew list exports</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-2 border-t border-slate-200">
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Operational limits:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-500">
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>Engineered for bareboats, not luxury superyachts</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>No APA provisioning or S&P acquisition suite</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] text-slate-500 font-medium">
-                Best for: Self-skippered bareboat fleet volume.
+              <div className="pt-4 border-t border-slate-200 text-[11px] text-[#02509A] font-semibold bg-sky-50/50 p-2.5 rounded-xl">
+                YachtDesk Synergy: We import your MMK calendar feed to power luxury crewed proposals without replacing your agency distribution.
               </div>
             </div>
 
             {/* Card 3: Hiring In-House Admin/Junior Broker */}
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
-                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Internal Headcount</div>
-                <h3 className="text-lg font-black text-[#0B1E36]">In-House Junior Broker</h3>
+                <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">In-House Payroll</div>
+                <h3 className="text-lg font-black text-[#0B1E36]">In-House Coordinator</h3>
                 <div className="p-3 rounded-xl bg-white border border-slate-200 text-xs space-y-1">
-                  <div className="text-red-600 font-bold">€30,000 – €45,000 / Year</div>
-                  <div className="text-slate-600 font-semibold">+ Social Security (EFKA)</div>
-                  <div className="text-[11px] text-slate-400">Recurring fixed payroll liability</div>
+                  <div className="text-slate-800 font-bold">€30,000 – €45,000 / Year</div>
+                  <div className="text-slate-600 font-semibold">+ EFKA Social Contributions</div>
+                  <div className="text-[11px] text-slate-500">Fixed annual overhead & payroll</div>
                 </div>
-                <ul className="space-y-2.5 text-xs text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Takes 2–4 hours to assemble PDF proposals manually</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Prone to human error on Greek VAT & APA Excel formulas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>Unavailable during late-night international UHNW inquiries</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>High staff turnover at the end of each summer season</span>
-                  </li>
-                </ul>
+                <div>
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">What the cost provides:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Physical office presence in Athens / Alimos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Manual phone answering & base coordination</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-600 font-bold">✓</span>
+                      <span>Ad-hoc errand handling during turnarounds</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-2 border-t border-slate-200">
+                  <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Operational limits:</div>
+                  <ul className="space-y-1.5 text-xs text-slate-500">
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>2–4 hours per proposal; high summer turnover</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-500 font-bold">•</span>
+                      <span>Manual Excel formula errors on Greek VAT/APA</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] text-slate-500 font-medium">
-                Best for: High-overhead traditional agencies.
+              <div className="pt-4 border-t border-slate-200 text-[11px] text-[#02509A] font-semibold bg-sky-50/50 p-2.5 rounded-xl">
+                YachtDesk Synergy: Enables a single central agent to manage 25+ yachts without hiring additional coordinators.
               </div>
             </div>
 
