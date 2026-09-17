@@ -142,7 +142,7 @@ export default function FleetPartnersPage() {
     },
     {
       q: "What is the exact difference between the €0 Partner plan and the White-Label OS?",
-      a: "The Central Agency Partner plan (€0/month) is 100% performance-based: we distribute your fleet to verified international charterers and family offices, wiring funds to your escrow while you keep your full 5% CA commission with zero fixed costs. The White-Label Fleet OS (€290/month or €2,900/year) is for running your internal agency: you get unlimited use of our 30-second proposal builder, automated MYBA generator, custom branding with your agency logo, and multi-user broker seats for your direct in-house retail clients."
+      a: "The Central Agency Partner plan (€0/month) is 100% performance-based: we distribute your fleet to verified international charterers and family offices, wiring funds to your escrow while you keep your full 5% CA commission with zero fixed costs. The Enterprise Fleet OS (€1,950/month or €19,500/year) is for running your internal agency: you get unlimited use of our 30-second proposal builder, automated MYBA generator, custom branding with your agency logo, multi-user broker seats, and peak-season SLA for your direct in-house retail clients."
     }
   ];
 
@@ -570,7 +570,7 @@ export default function FleetPartnersPage() {
                 <div className="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs space-y-1">
                   <div className="text-emerald-700 font-extrabold text-sm">Partner Tier: €0 Setup, €0 / Month</div>
                   <div className="text-[#02509A] font-bold">100% CA Commission Kept (5%)</div>
-                  <div className="text-[11px] text-slate-500">Or White-Label Fleet OS: €290 / Month</div>
+                  <div className="text-[11px] text-slate-500">Or Enterprise Standalone OS: €1,950 / Month</div>
                 </div>
 
                 <ul className="space-y-2.5 text-xs text-slate-700">
@@ -1113,7 +1113,7 @@ export default function FleetPartnersPage() {
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-[#0B1E36] tracking-tight">
               Zero Fixed Fees For Central Agents. <br />
-              <span className="aegean-gradient-text">Or Deploy Standalone For €290.</span>
+              <span className="aegean-gradient-text">Or Enterprise Standalone for €1,950 / Mo.</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               No hidden fees, no credit card required, and zero financial risk. Select the model that fits your agency.
@@ -1205,28 +1205,28 @@ export default function FleetPartnersPage() {
               </div>
             </div>
 
-            {/* TIER 2: White-Label Fleet Operating System (€290/mo) */}
+            {/* TIER 2: Enterprise Fleet Operating System (€1,950/mo) */}
             <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-md flex flex-col justify-between relative">
               <div className="space-y-6">
                 <div className="space-y-2">
                   <span className="text-xs font-bold uppercase tracking-widest text-slate-500 font-mono">
-                    Tier 2 • In-House Operations (Standalone)
+                    Tier 2 • In-House Operations (Enterprise Standalone)
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-[#0B1E36]">
-                    Private White-Label Fleet OS
+                    Enterprise Fleet OS
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                    For fleet management houses (like Vernicos, Athenian, Istion) who want to run their in-house broker team and direct retail clients on our automated software.
+                    For established Hellenic fleet houses (like Vernicos, Athenian, Istion) deploying our automated operating infrastructure internally for their own in-house broker desk.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl sm:text-5xl font-black text-[#0B1E36]">€290</span>
+                    <span className="text-4xl sm:text-5xl font-black text-[#0B1E36]">€1,950</span>
                     <span className="text-sm font-bold text-slate-500">/ Month</span>
                   </div>
                   <div className="text-xs font-semibold text-slate-600 flex items-center gap-1.5">
-                    <span>Or €2,900 / year • Unlimited brokers • €0 setup fee</span>
+                    <span>Or €19,500 / year • Unlimited brokers • Peak-Season Turnaround SLA</span>
                   </div>
                 </div>
 
@@ -1265,6 +1265,13 @@ export default function FleetPartnersPage() {
                   <div className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#02509A] shrink-0 mt-0.5" />
                     <span>
+                      <strong>Dedicated Peak-Season SLA:</strong> Priority technical operations support during Friday–Sunday Aegean marina turnarounds.
+                    </span>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-[#02509A] shrink-0 mt-0.5" />
+                    <span>
                       <strong>Website Availability Embed Widget:</strong> Real-time calendar widgets embedded directly into your agency website.
                     </span>
                   </div>
@@ -1278,7 +1285,7 @@ export default function FleetPartnersPage() {
                   className="w-full py-4 rounded-2xl bg-[#0B1E36] hover:bg-[#071526] text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Building2 className="w-4 h-4 text-sky-400" />
-                  Select White-Label Fleet OS (€290)
+                  Select Enterprise Fleet OS (€1,950/mo)
                 </button>
               </div>
             </div>
@@ -1407,9 +1414,9 @@ export default function FleetPartnersPage() {
                         className="mt-1 accent-[#02509A]"
                       />
                       <div>
-                        <div className="font-extrabold text-sm text-[#0B1E36]">White-Label Fleet OS (€290/mo)</div>
+                        <div className="font-extrabold text-sm text-[#0B1E36]">Enterprise Fleet OS (€1,950/mo)</div>
                         <div className="text-[11px] text-slate-600 mt-0.5">
-                          Private in-house software for your own team, proposals, and direct retail clients.
+                          Private in-house software with SLA support for your own broker team and direct retail clients.
                         </div>
                       </div>
                     </label>
